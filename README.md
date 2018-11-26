@@ -7,9 +7,9 @@ JavaScript is the most popular programming language on Earth. There are thousand
 
 ## Goals
 
-Stars, commits, pull-requests, issues, and downloads are commmonly used to measure popularity of JavaScript packages on GitHub. We will attempt to show that the number references to these packages by other repositories on GitHub is a more useful metric for determining a package's *popularity*. 
+Stars, commits, pull-requests, issues, and downloads are commmonly used to measure popularity of JavaScript packages on GitHub. We will attempt to show that the number of references to these packages by other repositories on GitHub is a more useful metric for determining a package's *popularity*. 
 
-The dependency graph generated as part of this analysis can not only be used by developers to help determine which JavaScript package to choose, but it can also give insights into the dynamics of the JavaScript ecosystem, the adoption trends of JavaScript packages, and the nature of the projects consuming these packages.
+The dependency graph generated as part of this analysis can not only be used by developers to help determine which JavaScript package to choose, but it can also give insights into the dynamics of the JavaScript ecosystem, the adoption trends of JavaScript packages, and for package developers to attain into the nature of the projects consuming their packages.
 
 **Human-centered design inspiration**
 
