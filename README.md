@@ -1,11 +1,11 @@
 
-## Ranking JavaScript Packages by Number of Dependent Projects 
+# Ranking JavaScript Packages by Number of Dependent Projects 
 
-# Problem
+## Problem
 
 JavaScript is the most popular programming language on Earth. There are thousands of open source packages released for developers to use in their projects. When developers are deciding between similar packages that fulfill the needs of the project, they often desire to choose the most *popular* package with the largest community size, which often translates to the highest probability of future growth/support. Since *popularity* of the package is not easily measurable, users often use npm downloads or stars on Github as a proxy. However, the number of downloads is an unreliable indicator because download counts are incremented by [automated build processes/robots](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts) and GitHub stars are [indicative of the traffic or attention a package receives on GitHub](https://help.github.com/articles/about-stars/), but not necessarily usage. Additionally, since stars and download counts are nondecreasing, users can incorrectly assume that packages with higher star and download counts currently have larger communities or are more well maintained. 
 
-# Goals
+## Goals
 
 Stars, commits, pull-requests, issues, and downloads are commmonly used to measure popularity of JavaScript packages on GitHub. We will attempt to show that the number references to these packages by other repositories on GitHub is a more useful metric for determining a package's *popularity*. 
 
@@ -16,7 +16,7 @@ The dependency graph generated as part of this analysis can not only be used by 
 The decision to pursue this project was inspired by a common issue that people face when trying to evaluate packages on GitHub and the problem some developers have with having the importance of their work recognized. We will gather feedback from JavaScript developers during the formulation of research questions and while evaluating results of the analysis to determine if the new metric provides any additional value to them.
 
 
-# Research questions
+## Research questions
 
 A similar study, [NPM By Numbers](http://npmbynumbers.bocoup.com/), was peformed in 2014, but with the significant difference of only analyzing packages published on NPM and not the applications which consume those packages. We intend to answer similar questions, using GitHub data, that were asked in the exploratory analysis for that study. 
 
@@ -52,7 +52,7 @@ A similar study, [NPM By Numbers](http://npmbynumbers.bocoup.com/), was peformed
 
 
 
-# Dataset
+## Dataset
 **Datset used in this analysis**
 >This 3TB+ dataset comprises the largest released source of GitHub activity to date. It contains a full snapshot of the content of more than 2.8 million open source GitHub repositories including more than 145 million unique commits, over 2 billion different file paths, and the contents of the latest revision for 163 million files, all of which are searchable with regular expressions.
 >
@@ -119,7 +119,7 @@ A similar study, [NPM By Numbers](http://npmbynumbers.bocoup.com/), was peformed
 > [Source](https://console.cloud.google.com/marketplace/details/github/github-repos?filter=solution-type:dataset&q=github&id=46ee22ab-2ca4-4750-81a7-3ee0f0150dcb&project=api-8220795080820646267-783724&folder&organizationId)
 
 
-# Alternate dataset
+## Alternate dataset
 **[Libraries.io Open Source Repository and Dependency Metadata](https://libraries.io/data)**
 > Libraries.io gathers data from 36 package managers and 3 source code repositories. We track over 2.7m unique open source packages, 33m repositories and 235m interdependencies between them. This gives Libraries.io a unique understanding of open source software. An understanding that we want to share with you. 
 >
@@ -134,7 +134,7 @@ A similar study, [NPM By Numbers](http://npmbynumbers.bocoup.com/), was peformed
 
 
 
-# Method
+## Method
 
 We will use the following [method](http://jbeckwith.com/2016/08/13/bigquery-github/) to get the ranking of packages with the largest number of dependencies by other repos:
 1. Get all top level package.json files from [bigquery-public-data:github_repos.files]
@@ -145,23 +145,23 @@ We will use the following [method](http://jbeckwith.com/2016/08/13/bigquery-gith
 
 
 
-# Limitations of approach
+## Limitations of approach
 
 * Since we are relying on references contained packages.json data, we are excluding use of packages via CDN
 * Packages that have many contributors but are not included as dependencies, possibly due to being unfinished, will not be ranked 
 * Projects that do not have an Open Source license are ignored
 * Projects that have packages.json files below the top level will be ignored
 
-# Potential data limitations
+## Potential data limitations
 
 * 5 TB of data can be processed through queries in BigQuery for free per month. Beyond that, if costs are prohibitive, we may not be able to complete more in depth analysis
 * Semantic versioning syntax allows for the same string to point to different package versions, depending on when npm install was run. Thus, we cannot reliably consume the package version.
 
-# Requirements
+## Requirements
 * A device with a browser
 * A Google Cloud Platform Project
 
-# Analysis (placeholder)
+## Analysis (placeholder)
 1. Using the [BigQuery web UI](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=github_repos&t=commits&page=table), Google allows 1TB of data to be queried for free every month
 2. Alternatively, each Kaggle user can query 5TB of data for free every 30 days, with the help of Sohier's BigQuery helper module. Setup environment to run BigQueries in Kaggle Kernels:
 https://www.kaggle.com/poonaml/analyzing-3-million-github-repos-using-bigquery
